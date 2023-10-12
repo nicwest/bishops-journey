@@ -7,6 +7,8 @@
             [re-frame.core :as rf]
             [clojure.string :refer [join]]))
 
+(goog-define ROOT "")
+
 (def files ["a" "b" "c" "d" "e" "f" "g" "h"])
 (def files-speakable ["A" "B" "C" "D" "E" "F" "G" "H"])
 
@@ -37,6 +39,7 @@
 (def orange-color "orange")
 
 
+
 (defn square
   [sq piece]
     [:div {:key (coordinates sq)
@@ -48,7 +51,7 @@
                    :position "relative"
                    }}
      (when piece
-       [:img {:src "/imgs/wB.svg" :style {:z-index 100
+       [:img {:src (join "" [ROOT "/imgs/wB.svg"]) :style {:z-index 100
                                           :position "absolute"
                                           :top 0
                                           :left 0}}])])
